@@ -34,9 +34,13 @@ $ cd jeffgram
 ```
 ## Install the dependencies
 ```bash
-yarn install
+cd mobile && yarn install
 ```
 ## Run :iphone:
+Entre na pasta:
+```bash
+$ cd mobile
+```
 Run the application (iOS)
 ```bash
 $ react-native run-ios --simulator="iPhone XS Max"
