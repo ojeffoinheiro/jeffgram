@@ -1,7 +1,5 @@
 ## [Leia esta página em português](https://github.com/ojeffoinheiro/task/blob/master/README-PT.md)
-<h1 align="center">
-  Basic structure of a react native project
-</h1>
+<h1 align="center">Jeffgram</h1>
   
 <p align="center">
   <a href="#overview-book">Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -11,7 +9,7 @@
 </p>
 
 # Overview :book:
-This project aims to create a template that can be used when creating projects using React Native, since the process of installing and configuring libs at the beginning of a project can generate some complexity and often even errors that delay the process , thus hindering the development flow.
+This project aims to create a clone of the Instagram interface using React Native.
 
 # Technology :computer:
 This project was developed with the following technologies:
@@ -28,11 +26,11 @@ You should have:
 
 ## Clone this repository :floppy_disk:
 ```bash
-$ git clone https://github.com/ojeffoinheiro/basic-react-native.git
+$ git clone https://github.com/ojeffoinheiro/jeffgram.git
 ```
 ## Go into the repository :file_folder:
 ```bash
-$ cd basic-react-native
+$ cd jeffgram
 ```
 ## Install the dependencies
 ```bash
