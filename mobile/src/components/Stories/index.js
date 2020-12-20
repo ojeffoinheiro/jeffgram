@@ -13,10 +13,9 @@ import {
 } from './styles'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-import photo1 from '~/assets/img/photo2.jpg'
 import stories from './stories'
 
-const Stories = () => {
+const Stories = ({ onShowStory }) => {
   return(
     <Container>
       <ContainerHeader>
@@ -28,7 +27,7 @@ const Stories = () => {
       </ContainerHeader>
       <ContainerScrollStory>
         { stories && stories.map((story, index) => (
-          <ContaineItemStory key={index} >
+          <ContaineItemStory key={index} onPress={onShowStory} >
             <ContainePhotoStory>
               <Photo source={{ uri: story.avatar }} />
             </ContainePhotoStory>

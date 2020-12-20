@@ -21,7 +21,7 @@ export const ContainerScrollStory = styled.ScrollView.attrs({
   showHorizontalScrollIndicator: false
 })`
 `
-export const ContaineItemStory = styled.View`
+export const ContaineItemStory = styled.TouchableOpacity`
   width: 80px;
   height: 80px;
   justify-content: center;
