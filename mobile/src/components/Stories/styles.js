@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-  flex: 1;
+  padding: 10px;
 `
 export const ContainerHeader = styled.View`
   flex-direction: row;
@@ -20,7 +20,6 @@ export const ContainerScrollStory = styled.ScrollView.attrs({
   horizontal: true,
   showHorizontalScrollIndicator: false
 })`
-
 `
 export const ContaineItemStory = styled.View`
   width: 80px;
@@ -28,7 +27,6 @@ export const ContaineItemStory = styled.View`
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  margin-right: 15px;
 `
 export const ContainePhotoStory = styled.View`
   background-color: #F89B3B;

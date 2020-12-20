@@ -14,14 +14,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import photo1 from '~/assets/img/photo2.jpg'
-import photo2 from '~/assets/img/photo2.jpg'
-import photo3 from '~/assets/img/photo3.jpg'
-import photo4 from '~/assets/img/photo4.jpg'
-import photo5 from '~/assets/img/photo5.jpg'
-import photo6 from '~/assets/img/photo6.png'
-import photo7 from '~/assets/img/photo7.jpg'
-import photo8 from '~/assets/img/photo8.jpg'
-import photo9 from '~/assets/img/photo9.jpg'
+import stories from './stories'
 
 const Stories = () => {
   return(
@@ -34,84 +27,14 @@ const Stories = () => {
         </GroupLabel>
       </ContainerHeader>
       <ContainerScrollStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo1} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
+        { stories && stories.map((story, index) => (
+          <ContaineItemStory key={index} >
+            <ContainePhotoStory>
+              <Photo source={{ uri: story.avatar }} />
+            </ContainePhotoStory>
+            <UserName>{story.name}</UserName>
         </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
-        <ContaineItemStory>
-          <ContainePhotoStory>
-            <Photo source={photo3} />
-          </ContainePhotoStory>
-          <UserName>Jeferson</UserName>
-        </ContaineItemStory>
+        ))}
       </ContainerScrollStory>
     </Container>
   )
