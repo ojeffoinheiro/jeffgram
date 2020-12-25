@@ -25,7 +25,7 @@ const Stories = ({ onShowStory }) => {
           <Label>Watch all</Label>
         </GroupLabel>
       </ContainerHeader>
-      <ContainerScrollStory>
+      <ContainerScrollStory showsHorizontalScrollIndicator={false} >
         { stories && stories.map((story, index) => (
           <ContaineItemStory key={index} onPress={onShowStory} >
             <ContainePhotoStory>
