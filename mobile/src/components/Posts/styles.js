@@ -8,10 +8,10 @@ export const Scroll = styled.ScrollView.attrs({
 `;
 export const Container = styled.View`
   height: 550px;
-  padding-bottom: 20px
+  padding-bottom: 10px
 `;
 export const ContainerHeader = styled.View`
-  padding: 10px;
+  padding: 5px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
