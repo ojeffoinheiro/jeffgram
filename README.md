@@ -14,8 +14,12 @@ This project aims to create a clone of the Instagram interface using React Nativ
 # Technology :computer:
 This project was developed with the following technologies:
 - [React Native](https://reactnative.dev)
-- [item](https://react-icons.github.io/react-icons/)
-- [item](https://reactrouter.com/)
+- [axios](https://yarnpkg.com/package/axios)
+- [React Native Gesture Handler](https://yarnpkg.com/package/react-native-gesture-handler)
+- [React Native Reanimated](https://yarnpkg.com/package/react-native-reanimated)
+- [React Native Vector Icons](https://yarnpkg.com/package/react-native-vector-icons)
+- [React Navigation](https://reactnavigation.org)
+- [Styled Components](https://styled-components.com)
 ---
 
 # How to use :fire:
