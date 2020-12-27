@@ -4,10 +4,9 @@ export const Scroll = styled.ScrollView.attrs({
   vertical: true,
   showVerticalScrollIndicator: false
 })`
-  padding-bottom: 20px
+  padding-bottom: 10px
 `;
 export const Container = styled.View`
-  height: 550px;
   padding-bottom: 10px
 `;
 export const ContainerHeader = styled.View`
@@ -40,28 +39,50 @@ export const UserPhoto = styled.Image.attrs({
 `;
 
 export const PhotoPost = styled.Image.attrs({
-  resizeMode: 'cover'
+  resizeMode: 'cover',
 })`
   flex: 1;
-  margin: 20px;
-  border-radius: 8px;
 `
+export const Subcontainer = styled.View`
+  padding: 0px 10px;
+`;
 
-export const Username = styled.Text``;
+export const UsernameStory = styled.Text`
+  margin-left: 2px;
+`;
+export const UsernamePost = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+`;
+export const UsernameLiked = styled.Text`
+  font-size: 15px;
+`;
+
+export const Account = styled.View`
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+`;
+
+export const AccountText = styled.Text``;
+
+export const Likes = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
 export const ContainerActions = styled.View`
-  padding: 0px 20px;
+  margin-top: 5px;
 `;
+
+export const Button = styled.TouchableOpacity``
+
 export const ContainerActionsIcons = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 `;
 export const GroupIcons = styled.View`
   flex-direction: row;
-`;
-
-export const Label = styled.Text`
-  padding: 2px 0px;
-  font-size: 12px;
 `;

@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "username": "Miley Cyrus",
+        "avatar": "https://imgsapp2.uai.com.br/app/noticia_133890394703/2020/10/06/263363/20201006135818195467o.JPEG",
+        "text": "Testando comentários"
+    },{
+        "id": 2,
+        "username": "Tata Werneck",
+        "avatar": "https://imgsapp2.uai.com.br/app/noticia_133890394703/2020/10/06/263363/20201006135818195467o.JPEG",
+        "text": "Testando comentários"
+    }
+]
