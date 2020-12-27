@@ -28,8 +28,8 @@ export const Username = styled.Text`
 `;
 
 export const Image = styled.Image.attrs({
-    width: null,
-    height: null,
+    width: '50%',
+    height: '70%',
     flex: 1,
     position: 'relative'
 })``;
@@ -49,8 +49,7 @@ export const Mensage = styled.View`
     width: 270px;
 `;
 export const MensageText = styled.TextInput`
-flex: 1;
-font-size: 16px;
-color: #268596;
-margin-left: 10px;
+    font-size: 16px;
+    color: #268596;
+    margin-left: 10px;
 `;
