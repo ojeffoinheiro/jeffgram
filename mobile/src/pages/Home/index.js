@@ -5,6 +5,7 @@ import Stories from '~/components/Stories'
 import Posts from '~/components/Posts'
 import Tabbar from '~/components/Tabbar';
 import StoryModal from '~/components/StoryModal';
+import { ScrollView } from 'react-native';
 
 const Main = () => {
   const [showStory, setShowStory] =  useState(false);
@@ -15,9 +16,11 @@ const Main = () => {
 
   return(
     <React.Fragment>
-      <Header />
-      <Stories onShowStory={onShowStory} />
-      <Posts />
+      <ScrollView>
+        <Header />
+        <Stories onShowStory={onShowStory} />
+        <Posts />
+      </ScrollView>
       <Tabbar />
       {showStory && <StoryModal />}
     </React.Fragment>
