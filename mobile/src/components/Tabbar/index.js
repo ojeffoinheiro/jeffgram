@@ -1,24 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Container, SubContainer } from './styles'
+import {
+  TabArea,
+  TabItem,
+  TabItemCenter 
+} from './styles'
 
-const Tabbar = () => {
+export default ({ state, navigation }) => {
   const [iconConfigure] = useState({
     color: '#333',
     size: 30
   })
-  return(
-    <Container>
-      <SubContainer>
-        <Icon name='home' {...iconConfigure} />
-        <Icon name='search' {...iconConfigure} />
-        <Icon name='instagram' {...iconConfigure} />
-        <Icon name='heart' {...iconConfigure} />
-        <Icon name='user' {...iconConfigure} />
-      </SubContainer>
-    </Container>
-  )
-};
 
-export default Tabbar;
+  const goTo = (screenName) => {
+    navigation.navigate(screenName);
+  }
+
+  return (
+    <TabArea>
+        <TabItem onPress={() => goTo("Home")}>
+          <Icon name='home' {...iconConfigure} />
+        </TabItem>
+        <TabItem onPress={() => goTo("Search")}>
+          <Icon name='search' {...iconConfigure} />
+        </TabItem>
+        <TabItemCenter onPress={() => goTo("Appointments")}>
+          <Icon name='camera' {...iconConfigure} />
+        </TabItemCenter>
+        <TabItem onPress={() => goTo("Favorites")}>
+          <Icon name='heart' {...iconConfigure} />
+        </TabItem>
+        <TabItem onPress={() => goTo("Profile")}>
+          <Icon name='user' {...iconConfigure} />
+        </TabItem>
+  </TabArea>
+  );
+}
