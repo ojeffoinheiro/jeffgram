@@ -6,10 +6,11 @@ import {
   TabItem
 } from './styles'
 
-export default ({ state, navigation }) => {
+export default ({ navigation }) => {
   const [iconConfigure] = useState({
-    color: '#333',
-    size: 30
+    size: 30,
+    activeTintColor: 'tomato',
+    inactiveTintColor: 'gray'
   })
 
   const goTo = (screenName) => {
@@ -24,10 +25,10 @@ export default ({ state, navigation }) => {
         <TabItem onPress={() => goTo("Search")}>
           <Icon name='search' {...iconConfigure} />
         </TabItem>
-        <TabItem onPress={() => goTo("Appointments")}>
+        <TabItem onPress={() => goTo("AddPost")}>
           <Icon name='plus-square-o' {...iconConfigure} />
         </TabItem>
-        <TabItem onPress={() => goTo("Favorites")}>
+        <TabItem onPress={() => goTo("Notification")}>
           <Icon name='heart' {...iconConfigure} />
         </TabItem>
         <TabItem onPress={() => goTo("Profile")}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextInput } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { 
@@ -12,10 +12,16 @@ import {
     Image,
     Mensage,
     MensageText,
+    Button,
 } from './styles'
 
 export default function Story({ story, properties }) {
     const [message, setMessage] = useState('')
+    const navigation = useNavigation();
+
+    const handleBackButton = () => {
+        navigation.goBack();
+      };
 
     return(
         <Container {...properties} >
@@ -24,7 +30,9 @@ export default function Story({ story, properties }) {
                     <AvatarUser source={{ uri: story.avatar }} resizeMode = 'contain' />
                     <Username>{story.username}</Username>
                 </InfoUser>
-                <Icon name="close" color="white" size={20} style={{ marginRight: 5 }} />
+                <Button onPress={handleBackButton}>
+                    <Icon name="close" color="white" size={20} style={{ marginRight: 5 }} />
+                </Button>
             </Header>
             <Image source={{ uri: story.img }} resizeMode = 'stretch'/>
             <Footer>
