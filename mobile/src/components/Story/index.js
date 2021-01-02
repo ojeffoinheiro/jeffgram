@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { TextInput } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome5'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { 
     Container,
+    Header,
     InfoUser,
     AvatarUser,
     Username,
@@ -18,11 +19,14 @@ export default function Story({ story, properties }) {
 
     return(
         <Container {...properties} >
+            <Header>
+                <InfoUser>
+                    <AvatarUser source={{ uri: story.avatar }} resizeMode = 'contain' />
+                    <Username>{story.username}</Username>
+                </InfoUser>
+                <Icon name="close" color="white" size={20} style={{ marginRight: 5 }} />
+            </Header>
             <Image source={{ uri: story.img }} resizeMode = 'stretch'/>
-            <InfoUser>
-                <AvatarUser source={{ uri: story.avatar }} resizeMode = 'contain' />
-                <Username>{story.username}</Username>
-            </InfoUser>
             <Footer>
                 <Icon name="camera" color="white" size={28} />
                 <MensageText 
