@@ -3,8 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {
   TabArea,
-  TabItem,
-  TabItemCenter 
+  TabItem
 } from './styles'
 
 export default ({ state, navigation }) => {
@@ -25,9 +24,9 @@ export default ({ state, navigation }) => {
         <TabItem onPress={() => goTo("Search")}>
           <Icon name='search' {...iconConfigure} />
         </TabItem>
-        <TabItemCenter onPress={() => goTo("Appointments")}>
-          <Icon name='camera' {...iconConfigure} />
-        </TabItemCenter>
+        <TabItem onPress={() => goTo("Appointments")}>
+          <Icon name='plus-square-o' {...iconConfigure} />
+        </TabItem>
         <TabItem onPress={() => goTo("Favorites")}>
           <Icon name='heart' {...iconConfigure} />
         </TabItem>

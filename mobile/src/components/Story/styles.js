@@ -5,11 +5,15 @@ export const Container = styled(Animated.View).attrs({
     ...StyleSheet.absoluteFillObject,
 })``;
 
+export const Header = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 5px;
+`;
+
 export const InfoUser = styled.View`
-    margin: 10px;
     flex-direction: row;
     justifyContent: center;
-    position: absolute;
 `;
 export const AvatarUser = styled.Image.attrs({
     resizeMode: 'cover'
