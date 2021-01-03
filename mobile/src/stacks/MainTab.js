@@ -3,11 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
-import Home from '~/pages/Home';
-import AddPost from '~/pages/AddPost';
-import Search from '~/pages/Search';
-import Notification from '~/pages/Notification';
-import Profile from '~/pages/Profile';
+import Home from '~/pages/Tab/Home';
+import AddPost from '~/pages/Tab/AddPost';
+import Search from '~/pages/Tab/Search';
+import Notification from '~/pages/Tab/Notification';
+import Profile from '~/pages/Tab/Profile';
 import Tabbar from '~/components/Tabbar';
 
 export default () => (

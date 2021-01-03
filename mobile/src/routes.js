@@ -1,6 +1,6 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Home from '~/pages/Home';
+import Home from '~/pages/Tab/Home';
 
 const Routes = createAppContainer(createSwitchNavigator({ Home }));
 
