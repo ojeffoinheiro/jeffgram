@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import {
   Container,
@@ -15,7 +16,13 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import stories from './stories'
 
-const Stories = ({ onShowStory }) => {
+const Stories = () => {
+  const navigation = useNavigation();
+  
+  const handleClick = () => {
+    navigation.navigate('Story')
+  }
+
   return(
     <Container>
       <ContainerHeader>
@@ -27,7 +34,7 @@ const Stories = ({ onShowStory }) => {
       </ContainerHeader>
       <ContainerScrollStory showsHorizontalScrollIndicator={false} >
         { stories && stories.map((story, index) => (
-          <ContaineItemStory key={index} onPress={onShowStory} >
+          <ContaineItemStory key={index} onPress={handleClick} >
             <ContainePhotoStory>
               <Photo source={{ uri: story.avatar }} />
             </ContainePhotoStory>

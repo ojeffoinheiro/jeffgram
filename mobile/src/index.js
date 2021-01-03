@@ -1,17 +1,15 @@
 import React from 'react';
-import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+
+import 'react-native-gesture-handler';
 import '~/config/ReactotronConfig';
-import Routes from '~/routes';
 
-const App = () => <Routes />;
+import MainStack from '~/stacks/MainStack';
 
-export default function All() {
+export default () => {
   return (
-    <NavigationContainer>
-        <App />
-    </NavigationContainer>
+        <NavigationContainer>
+          <MainStack />
+        </NavigationContainer>
   );
 }
-
-export default All;

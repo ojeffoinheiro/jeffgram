@@ -11,6 +11,8 @@ export const Header = styled.View`
     margin: 5px 5px;
 `;
 
+export const Button = styled.TouchableOpacity``;
+
 export const InfoUser = styled.View`
     flex-direction: row;
     justifyContent: center;
