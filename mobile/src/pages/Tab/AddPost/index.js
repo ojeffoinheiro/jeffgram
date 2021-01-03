@@ -1,16 +1,60 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import { useNavigation } from '@react-navigation/native';
+
+import {
+  Container,
+  Header,
+  Title,
+  ImageContainer,
+  Image,
+  Buttom,
+  Btn,
+  ButtomText,
+  Input
+} from './style'
 
 const Main = () => {
-  const [showStory, setShowStory] =  useState(false);
+  const navigation = useNavigation();
+
+  const [image, setImage] =  useState(null);
+  const [account, setAccount] =  useState(null);
+
+  const handleBackButton = () => {
+    navigation.goBack();
+  };
 
   return(
-    <React.Fragment>
-      <View>
-          <Text>AddPost</Text>
-      </View>
-    </React.Fragment>
+    <Container>
+      <Header>
+        <Btn onPress={handleBackButton}>
+          <Icon name='angle-left' size={30} color='#555' />
+        </Btn>
+        <Title>Novo Post</Title>
+        <Buttom>
+            <ButtomText>Compartilhar</ButtomText>
+        </Buttom>
+      </Header>
+      <ImageContainer>
+        <Image />
+      </ImageContainer>
+      <Buttom>
+        <ButtomText>Selecione uma foto</ButtomText>
+      </Buttom>
+      <Input placeholder='Adicione uma descrição'
+        value={account}
+        onChangeText={(t) => setAccount(t)} />
+    </Container>
   );
 };
 
 export default Main;
+
+{/* titulo
+                marginTop: Platform.OS === 'ios' ? 30 : 10,
+              imagecontainer
+                height: Dimensions.get('window').width / 2,
+              image
+                height: Dimensions.get('window').width / 2,
+
+          */}
