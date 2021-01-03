@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import SignIn from '../screens/SignIn';
 // import SignUp from '../screens/SignUp';
 import Home from '~/pages/Tab/Home'
+import AddPhoto from '~/pages/Tab/AddPhoto'
 import StoryModal from '~/pages/StoryModal'
 import MainTab from '../stacks/MainTab';
 

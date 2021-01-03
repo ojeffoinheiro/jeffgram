@@ -13,10 +13,12 @@ import {
   ButtomText,
   Input
 } from './style'
+import PhotoModal from '~/components/PhotoModal';
 
 const Main = () => {
   const navigation = useNavigation();
-
+  
+  const [showModal, setShowModal] = useState(true)
   const [image, setImage] =  useState(null);
   const [account, setAccount] =  useState(null);
 
@@ -44,6 +46,8 @@ const Main = () => {
       <Input placeholder='Adicione uma descrição'
         value={account}
         onChangeText={(t) => setAccount(t)} />
+    
+      {showModal && <PhotoModal />}
     </Container>
   );
 };

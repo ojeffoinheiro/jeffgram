@@ -25,7 +25,7 @@ export default ({ navigation }) => {
         <TabItem onPress={() => goTo("Search")}>
           <Icon name='search' {...iconConfigure} />
         </TabItem>
-        <TabItem onPress={() => goTo("AddPost")}>
+        <TabItem onPress={() => goTo("AddPhoto")}>
           <Icon name='plus-square-o' {...iconConfigure} />
         </TabItem>
         <TabItem onPress={() => goTo("Notification")}>
