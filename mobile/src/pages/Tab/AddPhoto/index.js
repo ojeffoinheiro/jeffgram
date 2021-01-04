@@ -29,7 +29,7 @@ import {
 
 const AddPhoto = () => {
   const navigation = useNavigation();
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(true)
   const [image, setImage] =  useState(null);
   const [account, setAccount] =  useState('')
 
@@ -37,43 +37,13 @@ const AddPhoto = () => {
     setShowModal(true)
   };
   const handleBackButton = () => {
-    navigation.goBack();
+    navigation.goBack()
+  };
+  const handleCancelButton = () => {
+    setShowModal(false)
   };
   const takePhotoFromCamera = () => {}
   const choosePhotoFromLibrary = () => {}
-
-  const PhotoModal = (
-    <Modal 
-      transparent={true} 
-      animationType='slide'>
-        <ModalArea>
-            <ModalBody>
-                <Container>
-                    <HeaderModal>
-                        <PanelHeader>
-                            <PanelHandle />
-                        </PanelHeader>
-                    </HeaderModal>
-                    <Panel>
-                        <SubPanel>
-                            <PanelTitle>Upload Photo</PanelTitle>
-                            <PanelSubtitle>Selecione uma foto</PanelSubtitle>
-                        </SubPanel>
-                        <PanelButton onPress={takePhotoFromCamera}>
-                            <PanelButtonTitle>Take Photo</PanelButtonTitle>
-                        </PanelButton>
-                        <PanelButton onPress={choosePhotoFromLibrary}>
-                            <PanelButtonTitle>Choose From Library</PanelButtonTitle>
-                        </PanelButton>
-                        <PanelButton onPress={handleBackButton}>
-                            <PanelButtonTitle>Cancel</PanelButtonTitle>
-                        </PanelButton>
-                    </Panel>
-                </Container>
-            </ModalBody>
-        </ModalArea>
-    </Modal>
-  )
 
   return(
     <Container>
@@ -95,6 +65,36 @@ const AddPhoto = () => {
       <Input placeholder='Adicione uma descrição' 
         value={account}
         onChangeText={t => setAccount(t)} />
+      <Modal 
+        visible={showModal}
+        transparent={true} 
+        animationType='slide'
+        >
+        <ModalArea>
+            <ModalBody>
+                    <HeaderModal>
+                        <PanelHeader>
+                            <PanelHandle />
+                        </PanelHeader>
+                    </HeaderModal>
+                    <Panel>
+                        <SubPanel>
+                            <PanelTitle>Upload Photo</PanelTitle>
+                            <PanelSubtitle>Selecione uma foto</PanelSubtitle>
+                        </SubPanel>
+                        <PanelButton onPress={takePhotoFromCamera}>
+                            <PanelButtonTitle>Take Photo</PanelButtonTitle>
+                        </PanelButton>
+                        <PanelButton onPress={choosePhotoFromLibrary}>
+                            <PanelButtonTitle>Choose From Library</PanelButtonTitle>
+                        </PanelButton>
+                        <PanelButton onPress={handleCancelButton}>
+                            <PanelButtonTitle>Cancel</PanelButtonTitle>
+                        </PanelButton>
+                    </Panel>
+            </ModalBody>
+        </ModalArea>
+    </Modal>
     </Container>
   );
 };

@@ -60,8 +60,8 @@ export const ModalArea = styled.View`
 export const ModalBody = styled.View`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  min-height: 350px;
-  padding: 10px 20px 40px 20px;
+  min-height: 200px;
+  padding: 10px 20px 0px 20px;
 `;
 export const Panel = styled.View`
     padding: 20px;
