@@ -20,7 +20,7 @@ export const StoryItem = styled.View`
   align-items: center;
   flex-direction: row;
 `;
-export const ContainerPhoto = styled.View`
+export const ContainerPhoto = styled.TouchableOpacity`
   background-color: #F89B3B;
   width: 30px;
   height: 30px;
