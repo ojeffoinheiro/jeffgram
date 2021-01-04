@@ -20,7 +20,7 @@ export const Panel = styled.View`
     background-color: #FFFFFF;
     padding-top: 20px;
 `;
-export const Header = styled.View`
+export const HeaderModal = styled.View`
     background-color: #FFFFFF;
     shadow-color: #333333;
     shadow-radius: 2px;

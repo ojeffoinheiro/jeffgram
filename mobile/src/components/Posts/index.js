@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import { useNavigation } from '@react-navigation/native'
 
 import posts from './post.json'
 import Comment from '../Comment'
@@ -27,6 +28,12 @@ import {
 } from './styles'
 
 const Posts = () => {
+  const navigation = useNavigation();
+  
+  const handleClick = () => {
+    navigation.navigate('Story')
+  }
+
   const [iconConfigure] = useState({
     color: '#333',
     size: 20,
@@ -41,7 +48,7 @@ const Posts = () => {
       <Container key={index} >
         <ContainerHeader>
           <StoryItem>
-            <ContainerPhoto>
+            <ContainerPhoto onPress={handleClick} >
               <UserPhoto source = {{ uri: post.profile.avatar }} />
             </ContainerPhoto>
             <UsernameStory>{post.profile.username}</UsernameStory>

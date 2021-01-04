@@ -130,6 +130,8 @@ android {
 
     defaultConfig {
         applicationId "com.mobile"
+        //IMG
+        vectorDrawables.useSupportLibrary = true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

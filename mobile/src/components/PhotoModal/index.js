@@ -6,7 +6,7 @@ import {
     ModalArea,
     ModalBody,
     Container,
-    Header,
+    HeaderModal,
     PanelHeader,
     PanelHandle,
     Panel,
@@ -40,11 +40,11 @@ const PhotoModal = ({show, setShow}) => {
             <ModalArea>
                 <ModalBody>
                     <Container>
-                        <Header>
+                        <HeaderModal>
                             <PanelHeader>
                                 <PanelHandle />
                             </PanelHeader>
-                        </Header>
+                        </HeaderModal>
                         <Panel>
                             <SubPanel>
                                 <PanelTitle>Upload Photo</PanelTitle>
