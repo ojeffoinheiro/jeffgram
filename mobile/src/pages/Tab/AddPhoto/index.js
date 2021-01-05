@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { useNavigation } from '@react-navigation/native';
+import ImagePicker from 'react-native-image-crop-picker';
+import Animated from 'react-native-reanimated';
 
 import {
   Container,
@@ -10,6 +12,7 @@ import {
   HeaderTitle,
   Buttom,
   ButtomText,
+  BodyPost,
   ImageContainer,
   Image,
   Input,
@@ -29,21 +32,51 @@ import {
 
 const AddPhoto = () => {
   const navigation = useNavigation();
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const [image, setImage] =  useState(null);
   const [account, setAccount] =  useState('')
+
+  const bs = React.createRef();
+  const fall = new Animated.Value(1);
 
   const handleClickPhoto = () => {
     setShowModal(true)
   };
   const handleBackButton = () => {
+    setImage(null)
+    setAccount('')
     navigation.goBack()
   };
   const handleCancelButton = () => {
+    setImage(null)
     setShowModal(false)
   };
-  const takePhotoFromCamera = () => {}
-  const choosePhotoFromLibrary = () => {}
+  const takePhotoFromCamera = () => {
+    ImagePicker.openCamera({
+      compressImageMaxWidth: 350,
+      compressImageMaxHeight: 350,
+      cropping: true,
+      compressImageQuality: 0.7
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      setShowModal(false);
+      bs.current.snapTo(1);
+    });
+  }
+  const choosePhotoFromLibrary = () => {
+    ImagePicker.openPicker({
+      width: 350,
+      height: 350,
+      cropping: true,
+      compressImageQuality: 0.7
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      setShowModal(false);
+      bs.current.snapTo(1);
+    });
+  }
 
   return(
     <Container>
@@ -59,12 +92,14 @@ const AddPhoto = () => {
       <Buttom onPress={handleClickPhoto} >
         <ButtomText>Selecione uma foto</ButtomText>
       </Buttom>
-      <ImageContainer>
-        <Image />
-      </ImageContainer>
-      <Input placeholder='Adicione uma descrição' 
-        value={account}
-        onChangeText={t => setAccount(t)} />
+      <BodyPost>
+        <ImageContainer>
+          <Image source={{ uri: image }}/>
+        </ImageContainer>
+        <Input placeholder='Adicione uma descrição' 
+          value={account}
+          onChangeText={t => setAccount(t)} />
+      </BodyPost>
       <Modal 
         visible={showModal}
         transparent={true} 
