@@ -4,8 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import Preload from '../screens/Preload';
 // import SignIn from '../screens/SignIn';
 // import SignUp from '../screens/SignUp';
+import Preload from '~/pages/Preload'
 import Home from '~/pages/Tab/Home'
-import AddPhoto from '~/pages/Tab/AddPhoto'
 import StoryModal from '~/pages/StoryModal'
 import MainTab from '../stacks/MainTab';
 
@@ -14,11 +14,14 @@ const Stack = createStackNavigator();
 function MyStack() {
     return(
         <Stack.Navigator
-            initialRouteName="MainTab"
+            initialRouteName="Preload"
             screenOptions={{
                 headerShown: false
             }}
         >
+        <Stack.Screen 
+            name="Preload" 
+            component={Preload} />
         <Stack.Screen 
             name="Home" 
             component={Home} />

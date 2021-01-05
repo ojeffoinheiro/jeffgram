@@ -53,8 +53,8 @@ const AddPhoto = () => {
   };
   const takePhotoFromCamera = () => {
     ImagePicker.openCamera({
-      compressImageMaxWidth: 350,
-      compressImageMaxHeight: 350,
+      compressImageMaxWidth: 600,
+      compressImageMaxHeight: 600,
       cropping: true,
       compressImageQuality: 0.7
     }).then(image => {
@@ -66,8 +66,8 @@ const AddPhoto = () => {
   }
   const choosePhotoFromLibrary = () => {
     ImagePicker.openPicker({
-      width: 350,
-      height: 350,
+      width: 600,
+      height: 600,
       cropping: true,
       compressImageQuality: 0.7
     }).then(image => {
