@@ -43,6 +43,8 @@ export const Input = styled.TextInput`
     margin-left: 20px;
     width: 60%;
     border-color: black;
+    border-bottom-width: 1px;
+    border-color: #BBB;
 `;
 
 export const Buttom = styled.TouchableOpacity`
