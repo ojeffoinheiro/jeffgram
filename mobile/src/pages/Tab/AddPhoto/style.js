@@ -19,22 +19,32 @@ export const HeaderTitle = styled.Text`
 export const HeaderButtom = styled.TouchableOpacity``;
 export const HeaderText = styled.Text`
     font-size: 15px;
-    color: #4286f4;
+    color: #F89B3B;
+`;
+export const BodyPost = styled.View` 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
 `;
 export const ImageContainer = styled.View`
-    width: 90%;
     background-color: #EEE;
     margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
 `;
 export const Image = styled.Image.attrs({
-    resizeMode: 'contain'
+    resizeMode: 'cover'
 })`
-  width: 300px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
 `
 export const Input = styled.TextInput`
     margin-top: 20px;
-    width: 90%;
+    margin-left: 20px;
+    width: 60%;
+    border-color: black;
+    border-bottom-width: 1px;
+    border-color: #BBB;
 `;
 
 export const Buttom = styled.TouchableOpacity`
@@ -60,8 +70,8 @@ export const ModalArea = styled.View`
 export const ModalBody = styled.View`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  min-height: 350px;
-  padding: 10px 20px 40px 20px;
+  min-height: 200px;
+  padding: 10px 20px 0px 20px;
 `;
 export const Panel = styled.View`
     padding: 20px;

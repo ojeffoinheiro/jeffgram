@@ -4,8 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // import Preload from '../screens/Preload';
 // import SignIn from '../screens/SignIn';
 // import SignUp from '../screens/SignUp';
-import Home from '~/pages/Tab/Home'
-import AddPhoto from '~/pages/Tab/AddPhoto'
+import Preload from '~/pages/Preload'
 import StoryModal from '~/pages/StoryModal'
 import MainTab from '../stacks/MainTab';
 
@@ -20,8 +19,8 @@ function MyStack() {
             }}
         >
         <Stack.Screen 
-            name="Home" 
-            component={Home} />
+            name="Preload" 
+            component={Preload} />
         <Stack.Screen 
             name="Story" 
             component={StoryModal} />

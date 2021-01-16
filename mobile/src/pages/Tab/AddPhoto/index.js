@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { useNavigation } from '@react-navigation/native';
+import ImagePicker from 'react-native-image-crop-picker';
+import Animated from 'react-native-reanimated';
 
 import {
   Container,
@@ -10,6 +12,7 @@ import {
   HeaderTitle,
   Buttom,
   ButtomText,
+  BodyPost,
   ImageContainer,
   Image,
   Input,
@@ -33,22 +36,77 @@ const AddPhoto = () => {
   const [image, setImage] =  useState(null);
   const [account, setAccount] =  useState('')
 
+  const bs = React.createRef();
+  const fall = new Animated.Value(1);
+
   const handleClickPhoto = () => {
     setShowModal(true)
   };
   const handleBackButton = () => {
-    navigation.goBack();
+    setImage(null)
+    setAccount('')
+    navigation.goBack()
   };
-  const takePhotoFromCamera = () => {}
-  const choosePhotoFromLibrary = () => {}
+  const handleCancelButton = () => {
+    setImage(null)
+    setShowModal(false)
+  };
+  const takePhotoFromCamera = () => {
+    ImagePicker.openCamera({
+      compressImageMaxWidth: 600,
+      compressImageMaxHeight: 600,
+      cropping: true,
+      compressImageQuality: 0.7
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      setShowModal(false);
+      bs.current.snapTo(1);
+    });
+  }
+  const choosePhotoFromLibrary = () => {
+    ImagePicker.openPicker({
+      width: 600,
+      height: 600,
+      cropping: true,
+      compressImageQuality: 0.7
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      setShowModal(false);
+      bs.current.snapTo(1);
+    });
+  }
 
-  const PhotoModal = (
-    <Modal 
-      transparent={true} 
-      animationType='slide'>
+  return(
+    <Container>
+      <Header>
+        <HeaderButtom onPress={handleBackButton} >
+          <Icon name='angle-left' size={30} color='#555' />
+        </HeaderButtom>
+        <HeaderTitle>Novo Post</HeaderTitle>
+        <HeaderButtom>
+          <HeaderText>Share</HeaderText>
+        </HeaderButtom>
+      </Header>
+      <Buttom onPress={handleClickPhoto} >
+        <ButtomText>Selecione uma foto</ButtomText>
+      </Buttom>
+      <BodyPost>
+        <ImageContainer>
+          <Image source={{ uri: image }}/>
+        </ImageContainer>
+        <Input placeholder='Adicione uma descrição' 
+          value={account}
+          onChangeText={t => setAccount(t)} />
+      </BodyPost>
+      <Modal 
+        visible={showModal}
+        transparent={true} 
+        animationType='slide'
+        >
         <ModalArea>
             <ModalBody>
-                <Container>
                     <HeaderModal>
                         <PanelHeader>
                             <PanelHandle />
@@ -65,36 +123,13 @@ const AddPhoto = () => {
                         <PanelButton onPress={choosePhotoFromLibrary}>
                             <PanelButtonTitle>Choose From Library</PanelButtonTitle>
                         </PanelButton>
-                        <PanelButton onPress={handleBackButton}>
+                        <PanelButton onPress={handleCancelButton}>
                             <PanelButtonTitle>Cancel</PanelButtonTitle>
                         </PanelButton>
                     </Panel>
-                </Container>
             </ModalBody>
         </ModalArea>
     </Modal>
-  )
-
-  return(
-    <Container>
-      <Header>
-        <HeaderButtom onPress={handleBackButton} >
-          <Icon name='angle-left' size={30} color='#555' />
-        </HeaderButtom>
-        <HeaderTitle>Novo Post</HeaderTitle>
-        <HeaderButtom>
-          <HeaderText>Share</HeaderText>
-        </HeaderButtom>
-      </Header>
-      <Buttom onPress={handleClickPhoto} >
-        <ButtomText>Selecione uma foto</ButtomText>
-      </Buttom>
-      <ImageContainer>
-        <Image />
-      </ImageContainer>
-      <Input placeholder='Adicione uma descrição' 
-        value={account}
-        onChangeText={t => setAccount(t)} />
     </Container>
   );
 };
