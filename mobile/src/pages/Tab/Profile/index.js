@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Stories from '~/components/Stories';
 
 import {
   Header,
@@ -21,7 +22,7 @@ import {
   UsernameBio,
   AccountBio,
   EditInfoButton,
-  EditInfoButtonText
+  EditInfoButtonText,
 } from './style';
 
 const Profile = () => {
@@ -74,6 +75,7 @@ const Profile = () => {
             <EditInfoButtonText>Editar perfil</EditInfoButtonText>
           </EditInfoButton>
         </UserBio>
+        <Stories />
       </Container>
     </React.Fragment>
   );

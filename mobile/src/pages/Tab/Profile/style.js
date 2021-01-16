@@ -84,5 +84,16 @@ export const EditInfoButton = styled.TouchableOpacity`
   justify-content: center;
   border-color: #dbdbdb;
   border-width: 1px;
-  align-items: center`;
+  align-items: center;
+`;
 export const EditInfoButtonText = styled.Text``;
+
+export const StoryContainer = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  margin-start: 10px;
+  margin-end: 10px;
+  margin-top: 10px
+  margin-bottom: 5px
+  align-items: center
+`;
