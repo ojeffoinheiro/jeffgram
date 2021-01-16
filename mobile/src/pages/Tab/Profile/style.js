@@ -97,3 +97,34 @@ export const StoryContainer = styled.View`
   margin-bottom: 5px
   align-items: center
 `;
+
+export const Line = styled.View`
+  background-color: #262626;
+  height: 1px;
+  justify-content: center;
+  margin-top: 10px;
+`;
+export const PostHeader = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+`;
+export const PostHeaderButton = styled.TouchableOpacity`
+  width: 25px;
+  height: 25px;
+`;
+export const ContainerPost = styled.View`
+  flex: 1;
+`;
+export const PostItem = styled.TouchableOpacity``;
+export const Image = styled.Image.attrs({
+    resizeMode: 'cover'
+})`
+    height: 200px;
+    flex: 1;
+    marginEnd: 2px;
+    marginBottom: 2px;
+    alignItems: center
+`;
