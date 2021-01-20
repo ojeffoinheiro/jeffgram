@@ -1,0 +1,39 @@
+[
+    {
+        "id": "1",
+        "name": "IGTV"
+        }, {
+        "id": "2",
+        "name": "Travel"
+        }, {
+        "id": "3",
+        "name": "Architecture"
+        }, {
+        "id": "4",
+        "name": "Store"
+        }, {
+        "id": "5",
+        "name": "Decoration"
+        }, {
+        "id": "6",
+        "name": "Art"
+        }, {
+        "id": "7",
+        "name": "Food"
+        }, {
+        "id": "8",
+        "name": "Stil"
+        }, {
+        "id": "9",
+        "name": "TV and Movies"
+        }, {
+        "id": "10",
+        "name": "Do it Yourself"
+        }, {
+        "id": "11",
+        "name": "Comedy"
+        }, {
+        "id": "12",
+        "name": "Music"
+    }
+]
