@@ -1,17 +1,18 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer'
 
 import Preload from '~/pages/Preload';
 import StoryModal from '~/pages/StoryModal';
+import Saved from '~/pages/Saved'
 import MainTab from '~/stacks/MainTab';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
-export default () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
+const StackScreen = () => (
+  <Stack.Navigator
         initialRouteName="MainTab"
         screenOptions={{
           headerShown: false,
@@ -20,6 +21,15 @@ export default () => {
         <Stack.Screen name="Story" component={StoryModal} />
         <Stack.Screen name="MainTab" component={MainTab} />
       </Stack.Navigator>
+)
+
+export default () => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator drawerPosition="right" >
+        <Drawer.Screen name="Home" component={StackScreen} />
+        <Drawer.Screen name="Saved" component={Saved} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };

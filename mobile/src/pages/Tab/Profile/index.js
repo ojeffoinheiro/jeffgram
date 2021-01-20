@@ -55,7 +55,7 @@ const Profile = () => {
           <Icon name="plus" size={20} />
         </AddPhoto>
         <Username>nome-usuario</Username>
-        <Menu>
+        <Menu onPress={() => navigation.openDrawer()} >
           <Icon name="bars" size={20} />
         </Menu>
       </Header>
