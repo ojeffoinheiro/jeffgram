@@ -122,7 +122,8 @@ export const PostItem = styled.TouchableOpacity``;
 export const Image = styled.Image.attrs({
     resizeMode: 'cover'
 })`
-    height: 200px;
+    height: 150px;
+    width: 150px;
     flex: 1;
     marginEnd: 2px;
     marginBottom: 2px;

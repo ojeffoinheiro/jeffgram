@@ -48,7 +48,7 @@ export default () => (
           <Icon name="heart" color={color} size={26} />
         ),
       }}/>
-    <Tab.Screen name="Profile" component={Notification} options={{
+    <Tab.Screen name="Profile" component={Profile} options={{
         showLabel: false,
         tabBarIcon: ({ color }) => (
           <Icon name="user" color={color} size={26} />
