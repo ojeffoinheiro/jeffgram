@@ -6,7 +6,9 @@ import {createDrawerNavigator} from '@react-navigation/drawer'
 import Preload from '~/pages/Preload';
 import StoryModal from '~/pages/StoryModal';
 import Saved from '~/pages/Saved'
+
 import MainTab from '~/stacks/MainTab';
+import { DrawerContent } from '~/components/Drawer'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -26,7 +28,7 @@ const StackScreen = () => (
 export default () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerPosition="right" >
+      <Drawer.Navigator drawerPosition="right" drawerContent={props => <DrawerContent {...props} />} >
         <Drawer.Screen name="Home" component={StackScreen} />
         <Drawer.Screen name="Saved" component={Saved} />
       </Drawer.Navigator>
