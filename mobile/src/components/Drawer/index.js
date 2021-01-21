@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, StyleSheet} from 'react-native';
 import {
   useTheme,
@@ -15,6 +15,12 @@ import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 export function DrawerContent(props) {
+  const [isDarkTheme, setIsDarkTheme] =  useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  }
+
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView {...props}>
@@ -46,17 +52,27 @@ export function DrawerContent(props) {
               icon={({color, size}) => (
                 <Icon name="bookmark-o" color={color} size={size} />
               )}
-              label="SALVOS" onPress={() => {}} />
+              label="Salvos" onPress={() => {props.navigation.navigate('Saved')}} />
               <DrawerItem 
               icon={({color, size}) => (
                 <Icon name="gear" color={color} size={size} />
               )}
-              label="CONFIGURAÇÕES" onPress={() => {}} />
+              label="Configurações" onPress={() => {props.navigation.navigate('Settings')}} />
               <DrawerItem 
               icon={({color, size}) => (
                 <Icon name="user-plus" color={color} size={size} />
               )}
-              label="ENCONTRAR PESSOAS" onPress={() => {}} />
+              label="Encontrar pessoas" onPress={() => {props.navigation.navigate('Meet')}} />
+            </Drawer.Section>
+            <Drawer.Section title="Preferências">
+              <TouchableRipple onPress={() => {toggleTheme()}} >
+                <View style={styles.preference}>
+                  <Text>Modo escuro</Text>
+                  <View pointerEvents="none">
+                    <Switch value={isDarkTheme} />
+                  </View>
+                </View>
+              </TouchableRipple>
             </Drawer.Section>
           </View>
         </View>

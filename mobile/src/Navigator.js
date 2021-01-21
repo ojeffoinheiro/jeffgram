@@ -6,6 +6,8 @@ import {createDrawerNavigator} from '@react-navigation/drawer'
 import Preload from '~/pages/Preload';
 import StoryModal from '~/pages/StoryModal';
 import Saved from '~/pages/Saved'
+import Meet from '~/pages/Meet'
+import Settings from '~/pages/Settings'
 
 import MainTab from '~/stacks/MainTab';
 import { DrawerContent } from '~/components/Drawer'
@@ -31,6 +33,8 @@ export default () => {
       <Drawer.Navigator drawerPosition="right" drawerContent={props => <DrawerContent {...props} />} >
         <Drawer.Screen name="Home" component={StackScreen} />
         <Drawer.Screen name="Saved" component={Saved} />
+        <Drawer.Screen name="Meet" component={Meet} />
+        <Drawer.Screen name="Settings" component={Settings} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
