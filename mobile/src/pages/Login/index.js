@@ -50,14 +50,14 @@ const Login = () => {
           placeholder="E-mail" 
           keyboardType='email-address'
           value={email}
-          onChangeText={email => setMessage(email)} />
+          onChangeText={email => setEmail(email)} />
       </UsernameContainer>
       <PasswordContainer>
         <PasswordText 
           placeholder="Senha" 
           secureTextEntry={true}
           value={password}
-          onChangeText={password => setMessage(password)}/>
+          onChangeText={password => setPassword(password)}/>
       </PasswordContainer>
       <ForgotPasswordContainer>
         <ForgotPasswordText>Esqueceu sua senha?</ForgotPasswordText>
