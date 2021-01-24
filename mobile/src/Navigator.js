@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer'
 
 import Preload from '~/pages/Preload';
+import Login from '~/pages/Login';
 import StoryModal from '~/pages/StoryModal';
 import Saved from '~/pages/Saved'
 import Meet from '~/pages/Meet'
@@ -17,11 +18,12 @@ const Drawer = createDrawerNavigator();
 
 const StackScreen = () => (
   <Stack.Navigator
-        initialRouteName="MainTab"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen name="Preload" component={Preload} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Story" component={StoryModal} />
         <Stack.Screen name="MainTab" component={MainTab} />
       </Stack.Navigator>
