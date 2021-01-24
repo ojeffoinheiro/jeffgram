@@ -11,11 +11,19 @@ import {
   ForgotPasswordContainer,
   ForgotPasswordText,
   LoginContainer,
-  LoginText
+  LoginText,
+  Subcontainer,
+  Line,
+  LoginAlternativeText,
+  FackbookLogContainer,
+  FacebookButton,
+  FacebookButtonText,
+  FacebookLogo,
 } from './styles'
 
 const Login = () => {
   const logo = '~/assets/img/logo2.png'
+  const faceLogo = '~/assets/img/facebookLogo.png'
   return(
     <Container>
      <LogoContainer>
@@ -35,7 +43,15 @@ const Login = () => {
      <LoginContainer onPress= {() => {}}>
        <LoginText>Entrar</LoginText>
      </LoginContainer>
-
+     <Subcontainer>
+       <Line /><LoginAlternativeText>Ou</LoginAlternativeText><Line />
+     </Subcontainer>
+     <FackbookLogContainer>
+       <FacebookLogo source={{ faceLogo }} />
+       <FacebookButton>
+         <FacebookButtonText>Login com Facebook</FacebookButtonText>
+       </FacebookButton>
+     </FackbookLogContainer>
     </Container>
   );
 };
