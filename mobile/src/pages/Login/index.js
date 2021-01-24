@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Text } from 'react-native';
+import React, {useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+
 import {
   Container,
   LogoContainer,
@@ -13,45 +14,77 @@ import {
   LoginContainer,
   LoginText,
   Subcontainer,
+  LineContainer,
   Line,
   LoginAlternativeText,
   FackbookLogContainer,
   FacebookButton,
   FacebookButtonText,
   FacebookLogo,
-} from './styles'
+  SignUpContainer,
+  SignUpText,
+  SignUpButtonText,
+  SignUpButton,
+} from './styles';
+
+import  logo from '../../assets/img/logo2.png';
 
 const Login = () => {
-  const logo = '~/assets/img/logo2.png'
-  const faceLogo = '~/assets/img/facebookLogo.png'
-  return(
+  const navigation = useNavigation();
+  const faceLogo = 'https://i0.wp.com/wp.ufpel.edu.br/clc/files/2019/10/facebook-logo.png';
+
+  const [email, setEmail] =  useState();
+  const [password, setPassword] =  useState();
+
+  login = () =>{
+    navigation.navigate('MainTab');
+  }
+
+  return (
     <Container>
-     <LogoContainer>
-       <LogoImage source={{ uri: logo }} />
-     </LogoContainer>
-     <UsernameContainer>
-       <UsernameInput placeholder="E-mail" />
-     </UsernameContainer>
-     <PasswordContainer>
-       <PasswordText 
-        placeholder="Senha"
-        secureTextEntry={true} />
-     </PasswordContainer>
-     <ForgotPasswordContainer>
-       <ForgotPasswordText>Esqueceu sua senha?</ForgotPasswordText>
-     </ForgotPasswordContainer>
-     <LoginContainer onPress= {() => {}}>
-       <LoginText>Entrar</LoginText>
-     </LoginContainer>
-     <Subcontainer>
-       <Line /><LoginAlternativeText>Ou</LoginAlternativeText><Line />
-     </Subcontainer>
-     <FackbookLogContainer>
-       <FacebookLogo source={{ faceLogo }} />
-       <FacebookButton>
-         <FacebookButtonText>Login com Facebook</FacebookButtonText>
-       </FacebookButton>
-     </FackbookLogContainer>
+      <LogoContainer>
+        <LogoImage source={logo} />
+      </LogoContainer>
+      <UsernameContainer>
+        <UsernameInput 
+          placeholder="E-mail" 
+          keyboardType='email-address'
+          value={email}
+          onChangeText={email => setMessage(email)} />
+      </UsernameContainer>
+      <PasswordContainer>
+        <PasswordText 
+          placeholder="Senha" 
+          secureTextEntry={true}
+          value={password}
+          onChangeText={password => setMessage(password)}/>
+      </PasswordContainer>
+      <ForgotPasswordContainer>
+        <ForgotPasswordText>Esqueceu sua senha?</ForgotPasswordText>
+      </ForgotPasswordContainer>
+      <LoginContainer onPress={login}>
+        <LoginText>Entrar</LoginText>
+      </LoginContainer>
+      <Subcontainer>
+        <Line />
+        <LoginAlternativeText>Ou</LoginAlternativeText>
+        <Line />
+      </Subcontainer>
+      <FackbookLogContainer>
+        <FacebookLogo source={{ uri: faceLogo }} />
+        <FacebookButton>
+          <FacebookButtonText>Login com Facebook</FacebookButtonText>
+        </FacebookButton>
+      </FackbookLogContainer>
+      <LineContainer>
+        <Line />
+      </LineContainer>
+      <SignUpContainer>
+        <SignUpText>Não tem uma conta? </SignUpText>
+        <SignUpButton>
+          <SignUpButtonText> Crie uma</SignUpButtonText>
+        </SignUpButton>
+      </SignUpContainer>
     </Container>
   );
 };

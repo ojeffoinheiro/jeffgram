@@ -7,8 +7,8 @@ export const Container = styled.View`
 `;
 
 export const LogoContainer = styled.View`
+  margin-top: 20px;
   align-items: center;
-  background-color: red;
 `;
 export const LogoImage = styled.Image.attrs({
   resizeMode: 'contain',
@@ -52,16 +52,15 @@ export const ForgotPasswordContainer = styled.TouchableOpacity`
   align-items: flex-end;
   margin-end: 20px;
 `;
-export const ForgotButton = styled.TouchableOpacity``;
 export const ForgotPasswordText = styled.Text`
-  color: #0088f8;
+  color: #1778f2;
 `;
 
 export const LoginContainer = styled.TouchableOpacity`
   align-items: center;
   height: 40px;
   margin-top: 30px;
-  background-color: #0088f8;
+  background-color: #1778f2;
   justify-content: center;
   margin-start: 20px;
   margin-end: 20px;
@@ -79,20 +78,20 @@ export const Subcontainer = styled.View`
 `;
 export const Line = styled.View`
   flex: 1;
-  height: 1px;
   background-color: #262626;
+  height: 1px;
 `;
 export const LoginAlternativeText = styled.Text`
-margin-left: 40px;
-margin-right: 40px;
-color: #969696;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #969696;
 `;
 
 export const FackbookLogContainer = styled.View`
-margin-top: 40px;
-flex-direction: row;
-align-items: center;
-justify-content: center;
+  margin-top: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 export const FacebookLogo = styled.Image.attrs({
   resizeMode: 'contain',
@@ -101,9 +100,27 @@ export const FacebookLogo = styled.Image.attrs({
   height: 20px;
 `;
 export const FacebookButton = styled.TouchableOpacity`
-align-items: center; 
-margin-start: 10px;
+  align-items: center;
+  margin-start: 10px;
 `;
 export const FacebookButtonText = styled.Text`
-color: #008bef;
+  color: #1778f2;
+`;
+
+export const SignUpContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+`;
+export const SignUpText = styled.Text`
+  color: #969696;
+`;
+export const SignUpButton = styled.TouchableOpacity``;
+export const SignUpButtonText = styled.Text`
+  color: #1778f2;
+`;
+export const LineContainer = styled.View`
+flex-direction: row;
+margin-top: 50px;
 `;
