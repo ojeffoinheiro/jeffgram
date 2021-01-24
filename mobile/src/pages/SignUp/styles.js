@@ -24,23 +24,14 @@ export const LabelContainer = styled.View`
   border-width: 1px;
   border-radius: 5px;
   height: 40px;
-  justify-content: center;
-  margin: 20px;
+  justify-content: flex-start;
+  margin: 10px;
 `;
 export const Input = styled.TextInput`
-  margin-right: 250px;
+  margin-start: 5px;
 `;
 
-
-export const ForgotPasswordContainer = styled.TouchableOpacity`
-  align-items: flex-end;
-  margin-end: 20px;
-`;
-export const ForgotPasswordText = styled.Text`
-  color: #F89B3B;
-`;
-
-export const LoginContainer = styled.TouchableOpacity`
+export const ButtonContainer = styled.TouchableOpacity`
   align-items: center;
   height: 40px;
   margin-top: 30px;
@@ -50,45 +41,14 @@ export const LoginContainer = styled.TouchableOpacity`
   margin-end: 20px;
   border-radius: 5px;
 `;
-export const LoginText = styled.Text`
+export const ButtonText = styled.Text`
   color: #fff;
 `;
 
-export const Subcontainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-`;
 export const Line = styled.View`
   flex: 1;
   background-color: #262626;
   height: 1px;
-`;
-export const LoginAlternativeText = styled.Text`
-  margin-left: 40px;
-  margin-right: 40px;
-  color: #969696;
-`;
-
-export const FackbookLogContainer = styled.View`
-  margin-top: 40px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-export const FacebookLogo = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  width: 20px;
-  height: 20px;
-`;
-export const FacebookButton = styled.TouchableOpacity`
-  align-items: center;
-  margin-start: 10px;
-`;
-export const FacebookButtonText = styled.Text`
-  color: #F89B3B;
 `;
 
 export const SignUpContainer = styled.View`

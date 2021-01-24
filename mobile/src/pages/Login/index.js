@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Material from 'react-native-vector-icons/Feather';
 
 import {
   Container,
   LogoContainer,
   LogoImage,
-  UsernameContainer,
-  UsernameInput,
-  PasswordContainer,
-  PasswordText,
+  LabelContainer,
+  Input,
   ForgotPasswordContainer,
   ForgotPasswordText,
   LoginContainer,
@@ -27,38 +27,49 @@ import {
   SignUpButton,
 } from './styles';
 
-import  logo from '../../assets/img/logo2.png';
+import logo from '../../assets/img/logo2.png';
 
 const Login = () => {
   const navigation = useNavigation();
-  const faceLogo = 'https://i0.wp.com/wp.ufpel.edu.br/clc/files/2019/10/facebook-logo.png';
+  const faceLogo =
+    'https://i0.wp.com/wp.ufpel.edu.br/clc/files/2019/10/facebook-logo.png';
 
-  const [email, setEmail] =  useState();
-  const [password, setPassword] =  useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
-  login = () =>{
+  login = () => {
     navigation.navigate('MainTab');
-  }
+  };
+  signup = () => {
+    navigation.navigate('SignUp');
+  };
 
   return (
     <Container>
       <LogoContainer>
         <LogoImage source={logo} />
       </LogoContainer>
-      <UsernameContainer>
-        <UsernameInput 
-          placeholder="E-mail" 
-          keyboardType='email-address'
+      <LabelContainer>
+        <Icon name="user" size={26} style={{marginRight: 20}} />
+        <Input
+          placeholder="E-mail"
+          autoCapitalize="none"
+          keyboardType="email-address"
           value={email}
-          onChangeText={email => setEmail(email)} />
-      </UsernameContainer>
-      <PasswordContainer>
-        <PasswordText 
-          placeholder="Senha" 
+          onChangeText={(email) => setEmail(email)}
+        />
+        <Icon name="check-square" size={26} color="green" />
+      </LabelContainer>
+      <LabelContainer>
+        <Icon name="lock" size={26} style={{marginRight: 20, marginTop: 5}} />
+        <Input
+          placeholder="Senha"
           secureTextEntry={true}
           value={password}
-          onChangeText={password => setPassword(password)}/>
-      </PasswordContainer>
+          onChangeText={(password) => setPassword(password)}
+        />
+        <Material name="droplet" size={26} color="gray" />
+      </LabelContainer>
       <ForgotPasswordContainer>
         <ForgotPasswordText>Esqueceu sua senha?</ForgotPasswordText>
       </ForgotPasswordContainer>
@@ -71,7 +82,7 @@ const Login = () => {
         <Line />
       </Subcontainer>
       <FackbookLogContainer>
-        <FacebookLogo source={{ uri: faceLogo }} />
+        <FacebookLogo source={{uri: faceLogo}} />
         <FacebookButton>
           <FacebookButtonText>Login com Facebook</FacebookButtonText>
         </FacebookButton>
@@ -81,7 +92,7 @@ const Login = () => {
       </LineContainer>
       <SignUpContainer>
         <SignUpText>Não tem uma conta? </SignUpText>
-        <SignUpButton>
+        <SignUpButton onPress={signup}>
           <SignUpButtonText> Crie uma</SignUpButtonText>
         </SignUpButton>
       </SignUpContainer>
