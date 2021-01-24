@@ -3,6 +3,7 @@
   
 <p align="center">
   <a href="#overview-book">Overview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#to-do-memo">To do</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technology-computer">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#how-to-use-fire">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#how-to-contribute-gear">How to contribute</a>
@@ -11,6 +12,7 @@
 # Overview :book:
 This project aims to create a clone of the Instagram interface using React Native.
 
+# To Do :memo:
 - [ ] Create the pages of:
    - [x] Home
    - [x] Add Photo
