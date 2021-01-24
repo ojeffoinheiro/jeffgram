@@ -11,6 +11,28 @@
 # Overview :book:
 This project aims to create a clone of the Instagram interface using React Native.
 
+- [ ] Create the pages of:
+   - [x] Home
+   - [x] Add Photo
+   - [x] Search
+   - [x] Profile
+   - [x] Login
+   - [ ] Notifications
+   - [ ] Register
+   - [ ] Find people
+   - [ ] Saved
+   - [ ] Settings
+   - [ ] Comments
+   - [ ] Likes
+   - [ ] Selected post
+   - [ ] Edit profile
+   - [ ] Saved
+   - [ ] Direct
+     - [ ] Conversation
+   - [ ] Create Story
+   - [ ] Filters
+- [ ] Improve the stories page
+
 # Technology :computer:
 This project was developed with the following technologies:
 - [React Native](https://reactnative.dev)
